@@ -1,0 +1,309 @@
+/* CSS amélioré */
+
+/* Police Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Effet de dégradé */
+h1, h2 {
+    background: linear-gradient(45deg, #ff3a3a, #b74b4b);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Navbar fixe et lisse */
+nav {
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(18, 18, 18, 0.9);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    color: #b74b4b;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #b74b4b;
+}
+
+/* Menu déroulant animé */
+.hamburg {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1b1b;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.dropdown a {
+    padding: 15px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.dropdown a:hover {
+    background: #b74b4b;
+}
+
+/* Sections avec effets parallax */
+section {
+    padding: 80px 10%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+#home {
+    background: url('https://i.postimg.cc/hjbjjyPw/main.jpg') no-repeat center center/cover;
+}
+
+section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease;
+}
+
+/* Effet de zoom sur l'image */
+.main-container .image {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(183, 75, 75, 0.7);
+    transition: transform 0.4s;
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-container .image:hover {
+    transform: scale(1.1);
+}
+
+/* Bouton avec effet 3D */
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: #b74b4b;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(183, 75, 75, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+button:hover {
+    transform: scale(1.05) rotateX(15deg);
+    box-shadow: 0 8px 20px rgba(183, 75, 75, 0.8);
+}
+
+/* Boîtes de compétences avec effet de croissance */
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #b74b4b;
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Responsive pour mobile */
+    .links {
+        display: none;
+    }
+
+    .hamburg {
+        display: block;
+    }
+
+    .dropdown {
+        display: flex;
+    }
+
+    section {
+        padding: 40px;
+    }
+
+    .main-container .image {
+        width: 70%;
+        height: auto;
+    }
+}
+/* Navbar Link Styling */
+nav .links a {
+    font-size: 1.1rem;
+    color: #d1d1d1; /* Couleur gris clair pour les liens */
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav .links a:hover {
+    color: #fff; /* Texte blanc au survol */
+    background-color: #b74b4b; /* Fond rouge au survol */
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-decoration: underline; /* Soulignement au survol */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Ajout d'une transition fluide pour les liens */
+nav .links a:active {
+    transform: scale(0.98);
+}
+/* Style pour les icônes des réseaux sociaux */
+.social-links a {
+    color: #d1d1d1; /* Couleur gris clair pour les icônes */
+    font-size: 2rem; /* Taille des icônes */
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition fluide */
+}
+
+/* Effet au survol des icônes */
+.social-links a:hover {
+    color: #b74b4b; /* Couleur rouge au survol */
+    transform: scale(1.1); /* Agrandissement de l'icône au survol */
+}
+
+/* Effet au clic sur l'icône */
+.social-links a:active {
+    transform: scale(0.98); /* Légère réduction lors du clic */
+}
+.github-link button {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.github-link button:hover {
+    background-color: #b74b4b;
+}
+
+.github-link i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+#about i.fa-github {
+    font-size: 3rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+#about i.fa-github:hover {
+    color: #b74b4b;
+}
+/* Skills Section CSS */
+#skills .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 45%; /* Ajustez la largeur selon le besoin */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.box i {
+    font-size: 2rem; /* Taille de l'icône */
+    margin-right: 15px;
+    color: #b74b4b; /* Couleur de l'icône */
+}
+
+.box:hover {
+    transform: translateY(-5px); /* Effet au survol */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.box div {
+    font-size: 1.2rem;
+}
+
+.box i:hover {
+    color: #ff3a3a; /* Changer la couleur de l'icône au survol */
+}
+
